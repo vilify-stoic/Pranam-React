@@ -1,15 +1,19 @@
+import React from 'react'
+import ReactDOM from 'react-dom';
+
 const h1 = React.createElement(
     'h1',
     {
         id:"title",
     },
-    "Heading 1"
+    "Heading 1 for parcel"
 );
 
 const h2 = React.createElement(
     'h2',
     {
         id:"title",
+        key:"World"
     },
     "Heading 2"
 );
