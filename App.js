@@ -1,32 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
+import image from "./logo/image.jpg"
 
-const h1 = React.createElement(
-    'h1',
-    {
-        id:"title",
-    },
-    "Heading 1 for parcel"
-);
+// const Title = () => {
+//     return (
+//         <h1 id="title" key="h2">
+//             Namaste React
+//         </h1>
+//     )
+// }
 
-const h2 = React.createElement(
-    'h2',
-    {
-        id:"title",
-        key:"World"
-    },
-    "Heading 2"
-);
+// const Header = () => {
+//     return (
+//         <header className='title'>
+//             <div>
+//                 {<Title/>}
+//                 <h1>Heading 1</h1>
+//                 <h1>Heading 2</h1>
+//                 <h1>Heading 3</h1>
+//             </div>
+//         </header>
+//     );
+// };
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<Header/>);
 
-const container = React.createElement(
-    'div',
-    {
-        id:"container"
-    },
-    [h1,h2]
-);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(container);
-
+root.render(<Title/>);
