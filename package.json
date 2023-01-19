@@ -4,7 +4,8 @@
   "description": "This is a React app",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.7.0"
   },
   "devDependencies": {
     "parcel": "^2.8.2",

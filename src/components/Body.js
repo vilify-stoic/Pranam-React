@@ -1,7 +1,7 @@
-import { restaurantList } from "../contants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer'
+import {Link} from "react-router-dom"
 
 function filterData(searchText, restaurants) {
   console.log(searchText);
@@ -15,7 +15,7 @@ const Body = () => {
 
   console.log("render");
 
-  const [allRestaurants, setAllRestaurants] = useState(restaurantList);
+  const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
@@ -34,12 +34,11 @@ const Body = () => {
         setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     }
 
-  if(!allRestaurants) return null;
   
-  if(filteredRestaurants?.length===0)
-  return <h1>No Restauraunt matach your Filter</h1>
+  if(!allRestaurants) 
+    return null;
 
-  return allRestaurants?.length === 0 ? Shimmer : (
+  return allRestaurants?.length === 0 ? <Shimmer/> : (
     <>
       <div className="search-container">
         <input
@@ -66,7 +65,12 @@ const Body = () => {
       <div className="restaurant-list">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+            <Link
+             to={"/restaurant/" + restaurant.data.id }
+             key={restaurant.data.id}
+            >
+              <RestaurantCard {...restaurant.data}  />
+            </Link>
           );
        })}
       </div>
